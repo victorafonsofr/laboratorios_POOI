@@ -1,0 +1,6 @@
+br/main/apparquivoserializado/ReadRandomFile.class
+br/main/apparquivoserializado/WriteRandomFile.class
+br/main/apparquivoserializado/RandomAccessAccountRecord.class
+br/main/apparquivoserializado/CreateRandomFile.class
+br/main/apparquivoserializado/AccountRecord.class
+br/main/apparquivoserializado/AppArquivoSerializado.class
