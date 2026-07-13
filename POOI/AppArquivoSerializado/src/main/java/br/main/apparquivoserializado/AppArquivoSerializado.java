@@ -36,7 +36,7 @@ public class AppArquivoSerializado {
                     break;
                 case 2:
                     escrever.openFile();
-                    escrever.addRecords();
+                 //   escrever.addRecords();
                     escrever.closeFile();
                     System.out.println("Registro Inserido!");
                     break;

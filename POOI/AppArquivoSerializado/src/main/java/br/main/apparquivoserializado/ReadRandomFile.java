@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,7 +24,7 @@ public class ReadRandomFile {
         try {
             input = new RandomAccessFile("clients.dat", "r");
         } catch (FileNotFoundException ex) {
-            System.out.println("Arquivo não encontrado!");
+        javax.swing.JOptionPane.showMessageDialog(null, "Arquivo não encontrado!");
         }
     }
 
@@ -33,7 +34,7 @@ public class ReadRandomFile {
             try {
             input.close();
         } catch (IOException ex) {
-            System.out.println("Erro ao fechar o arquivo!");
+        javax.swing.JOptionPane.showMessageDialog(null, "Erro ao fechar o arquivo!");
             System.exit(1);
         }
     }
@@ -51,15 +52,16 @@ public class ReadRandomFile {
                     registro.read(input);
                 } while (registro.getAccount() == 0);
                 //Se leu imprime o registro
-                System.out.println("Account:" + registro.getAccount() + "\t"
-                        + "firsName:" + registro.getFirstName() + "\t"
-                        + "lastName:" + registro.getLastName() + "\t"
+                JOptionPane.showMessageDialog(null,"Account:" + registro.getAccount() + "\n"
+                        + "firsName:" + registro.getFirstName() + "\n"
+                        + "lastName:" + registro.getLastName() + "\n"
                         + "balance:" + registro.getBalance());
+                
             }
         } catch (EOFException ex){
-            System.out.println("Chegou ao final do arquivo!");
+        javax.swing.JOptionPane.showMessageDialog(null, "Fim do arquivo!");
         } catch (IOException ex) {
-            System.out.println("Erro ao ler o arquivo!");
+        javax.swing.JOptionPane.showMessageDialog(null, "Erro ao ler o arquivo!");
             System.exit(1);
         }
     }

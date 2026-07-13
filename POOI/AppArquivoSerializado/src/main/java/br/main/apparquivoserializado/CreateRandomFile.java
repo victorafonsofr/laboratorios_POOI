@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,16 +25,19 @@ public class CreateRandomFile {
         try {
             file = new RandomAccessFile("clients.dat","rw");
             //Criando um objeto da classe RandomAccessAccountRecord
-            RandomAccessAccountRecord registro = 
-                    new RandomAccessAccountRecord();
+            RandomAccessAccountRecord registro = new RandomAccessAccountRecord();
             //criando a estrutura de repetição para criar o arquivo
             for(int count=0;count<NUMBER_RECORDS;count++)
                 registro.write(file);
             
+            JOptionPane.showMessageDialog(null, "Arquivo aberto com sucesso!");
+
+            
         } catch (FileNotFoundException ex) {
-            System.out.println("Arquivo não encontrado!");
+            JOptionPane.showMessageDialog(null, "Arquivo não encontrado");
         } catch (IOException ex) {
-            System.out.println("Erro ao acessar o arquivo!");
+            JOptionPane.showMessageDialog(null, "Erro ao acessar o arquivo!");
+            
             System.exit(1);
         }finally{
             //verificando se o arquivo foi criado
@@ -41,7 +45,8 @@ public class CreateRandomFile {
                 try {
                     file.close();
             } catch (IOException ex) {
-                    System.out.println("Erro ao fechar o arquivo!");
+                    JOptionPane.showMessageDialog(null, "Erro ao fechar o arquivo!");
+                    
                     System.exit(1);
             }
         }

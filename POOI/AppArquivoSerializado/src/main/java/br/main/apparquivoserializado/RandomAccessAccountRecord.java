@@ -37,7 +37,7 @@ public class RandomAccessAccountRecord extends AccountRecord{
     }
 
     public String readName(RandomAccessFile file) throws IOException {
-        char name[]=new char[15],temp;
+        char name[]= new char[15],temp;
         for(int count=0;count<name.length;count++){
             temp = file.readChar();
             name[count]=temp;
